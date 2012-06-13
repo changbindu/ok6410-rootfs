@@ -16,7 +16,8 @@ qtopia-rootfs.yaffs2 : qtopia-rootfs
 qtopia-rootfs.ubifs : qtopia-rootfs
 	mkfs.ubifs -m 4096 -e 516096 -c 1024 -x none -r $^ ubifs.img
 	ubinize -o $@ -m 4096 -p 512KiB ubinize.cfg
+	rm -f ubifs.img
 
 clean:
-	rm *.yaffs2 *.ubifs *.img
+	rm -f *.yaffs2 *.ubifs *.img
 
