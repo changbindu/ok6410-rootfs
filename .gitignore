@@ -1,1 +1,3 @@
 rootfs/*.yaffs2
+rootfs/*.ubifs
+rootfs/*.img
