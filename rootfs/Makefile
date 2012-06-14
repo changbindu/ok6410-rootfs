@@ -6,7 +6,7 @@ ubibootarg = "setenv bootargs console=ttySAC0,115200 ubi.mtd=rootfs root=ubi0:ro
 #boot arguments for yaffs2 image
 yaffsbootarg = "setenv bootargs console=ttySAC0,115200 root=/dev/mtdblock2 rootfstype=yaffs2  init=/linuxrc debug"
 
-PATH += :../tools
+PATH += :../tools:../tools/mtd-utils-1.5.0
 
 all : qtopia-rootfs.yaffs2 qtopia-rootfs.ubifs
 
