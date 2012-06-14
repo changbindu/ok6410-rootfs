@@ -11,6 +11,8 @@ export PATH runlevel prevlevel
 trap ":" INT QUIT TSTP
 /bin/hostname FORLINX6410
 
+mkdir -p /dev /mnt /proc /sys /tmp /var /udisk /sdcard
+
 /bin/mount -n -t proc none /proc
 /bin/mount -n -t sysfs none /sys
 /bin/mount -n -t usbfs none /proc/bus/usb
