@@ -25,7 +25,7 @@ if [ -n "$pid" ]; then
 fi
 
 export TSLIB_ROOT=/usr/local/tslib
-export TSLIB_TSDEVICE=/dev/input/event2
+export TSLIB_TSDEVICE=/dev/input/event0
 export TSLIB_TSEVENTTYPE=H3600
 export TSLIB_CONFFILE=/usr/local/tslib/etc/ts.conf
 export TSLIB_PLUGINDIR=/usr/local/tslib/lib/ts
@@ -34,13 +34,13 @@ export TSLIB_PLUGINDIR=$TSLIB_ROOT/lib/ts
 export TSLIB_CONSOLEDEVICE=none
 export TSLIB_FBDEVICE=/dev/fb0
 
-export QWS_MOUSE_PROTO=Tslib:/dev/input/event2
+export QWS_MOUSE_PROTO=Tslib:/dev/input/event0
 #export QWS_MOUSE_PROTO=TPanel:/dev/input/event1
 #export QWS_MOUSE_PROTO="Tslib:/dev/input/event1 MouseMan:/dev/input/mice"
 #export QWS_MOUSE_PROTO=MouseMan:/dev/input/mice
 export QWS_KEYBOARD="TTY:/dev/tty1"
 
-if [ -c /dev/input/event2 ]; then
+if [ -c /dev/input/event0 ]; then
         export QWS_MOUSE_PROTO="Tslib:${TSLIB_TSDEVICE}"
         if [ -e /etc/pointercal -a ! -s /etc/pointercal ] ; then
                 rm /etc/pointercal

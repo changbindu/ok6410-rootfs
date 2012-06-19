@@ -25,7 +25,7 @@ if [ -n "$pid" ]; then
 fi
 
 export TSLIB_ROOT=/usr/local/tslib
-export TSLIB_TSDEVICE=/dev/input/event2
+export TSLIB_TSDEVICE=/dev/input/event0
 export TSLIB_TSEVENTTYPE=H3600
 export TSLIB_CONFFILE=/usr/local/tslib/etc/ts.conf
 export TSLIB_PLUGINDIR=/usr/local/tslib/lib/ts
@@ -40,7 +40,7 @@ export LD_LIBRARY_PATH=$QTDIR/plugins/qtopialmigrate/:$QTDIR/qt_plugins/imagefor
 export PATH=/bin:/sbin:/usr/bin/:/usr/sbin:/root/tslib/build/bin
 
 
-if [ -c /dev/input/event2 ]; then
+if [ -c /dev/input/event0 ]; then
         export QWS_MOUSE_PROTO="Tslib:${TSLIB_TSDEVICE}"
         if [ -e /etc/pointercal -a ! -s /etc/pointercal ] ; then
                 rm /etc/pointercal
