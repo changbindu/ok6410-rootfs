@@ -77,6 +77,7 @@ echo "Starting networking..." > /dev/tty1
 #start boa web service
 /sbin/boa
 
+/etc/init.d/g_mass_storage
 
 echo "                                  " > /dev/tty1
 echo "Starting Qtopia2, please waiting..." > /dev/tty1

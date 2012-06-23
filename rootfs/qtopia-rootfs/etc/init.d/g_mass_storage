@@ -1,0 +1,18 @@
+#!/bin/sh
+
+storage_file=/mass_storage.img
+file_size=20M
+
+if [ ! -f $storage_file ]
+then
+	echo "creating $storage_file for g_mass_storage(size=$file_size)..."
+	dd if=/dev/zero of=$storage_file bs=$file_size count=1
+	mkfs.minix $storage_file
+fi
+
+if [ -f /sys/devices/platform/s3c-hsotg/gadget/lun0/file ]
+then
+	echo $storage_file >/sys/devices/platform/s3c-hsotg/gadget/lun0/file
+else
+	echo "g_mass_storage is not enabled"
+fi
